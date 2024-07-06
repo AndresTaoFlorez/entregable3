@@ -1,69 +1,118 @@
+@import './variables/general';
+
 .body {
    display: flex;
    flex-direction: column;
    overflow: clip auto;
    overflow: hidden;
-   // padding: calc(var(--toolbar-size) * 2);
-   padding-top: var(--toolbar-size);
-
-   .presentation-view-1 {
+   // padding-top: var(--toolbar-size);
+   .button {
+      position: absolute;
+      z-index: 1;
+      top: calc(1em + var(--toolbar-size));
+      left: 2em;
+      width: fit-content;
+      background: var(--font-color-1);
+      padding: 5px 7px;
+      border: none;
+      border-radius: 10px;
+      &:hover {
+         background: var(--font-color-2);
+      }
+      &:active {
+         background: var(--font-color-3);
+      }
+   }
+   .presentation { // Vertical and default View
       display: flex;
       flex-direction: column;
       align-items: center;
       overflow: hidden;
       justify-content: center;
-      background: #6df4f470;
-      transition: all 100ms ease-in-out;
-      animation: changePosition1 500ms forwards;
-      gap: calc(var(--toolbar-size) / 2);
-
+      // background: #6df4f470;
+      // gap: calc(var(--toolbar-size) / 2);
+      section {
+         width: 100%;
+         box-sizing: border-box;
+         display: flex;
+         flex-wrap: wrap;
+         flex-direction: row;
+         div {
+            flex-grow: 1;
+            padding: 0.5em 1em;
+            width: 240px;
+            background: linear-gradient(#156847e9, #155368a1);
+            border-radius: 15px;
+            box-sizing: border-box;
+            margin: 1em;
+         }
+      }
       .imageContent {
          display: flex;
          position: relative;
          overflow: hidden;
+         // height: calc(100vh - var(--toolbar-size));
          height: 100vh;
          width: 100vw;
          justify-content: center;
          align-items: center;
+         h1 {
+            position: absolute;
+            // font-size: 100%;
+            text-shadow: 0 0 10px black;
+            margin: 0;
+            // margin-right: 3em;
+            right: 2em;
+            left: 0.5em;
+            bottom: 1em;
+            padding: 0;
+            animation: showTitle 1s forwards;
+         }
+         @keyframes showTitle {
+            0% {
+               line-height: 0.8em;
+            }
+            100%{
+               line-height: 1em;
+            }
+         }
          .image {
             display: flex;
             border-radius: 15px;
-            height: 72%;
-            width: 75%;
+            height: 100%;
+            width: 100%;
             background-image: var(--frontPageImage);
             background-size: cover;
             box-shadow: 0 0 10px 2px #1c1c1c89;
          }
       }
    }
-
-   @keyframes changePosition1 {
-      0% {
-         transform: translate(0, 0);
-         background: #6df4f470;
+   .presentation-view-2{ // horizontal View
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: row;
+      padding-right: 1em;
+      section {
+         margin-top: calc(var(--toolbar-size) + 0.5em);
+         max-width: calc(100vw - var(--imageContentWidth));
+         width: 100%;
+         .products {
+            padding-left: 50px;
+            h1 {
+               font-size: 2.3em;
+            }
+            h2 {
+               padding: 0;
+               margin: 10px 0;
+          }
+         }
       }
-      100% {
-
-         display: flex;
-         flex-direction: column;
-         background: #43929270;
-         justify-self: center;
-         transition: all 100ms ease-in-out;
-         transform: translate(-50px, -200px);
-         width: 700px;
-      }
-   }
-   .presentation-view-2{
-      display: flex;
-      flex-direction: column;
-      background: #6df4f470;
-      justify-self: center;
-      transition: all 100ms ease-in-out;
       .imageContent {
          display: flex;
          position: relative;
          height: 100vh;
-         width: 600px;
+         max-width: var(--imageContentWidth);
+         width: 100%;
          .image {
             margin-top: calc(var(--toolbar-size)*-1);
             display: flex;
@@ -85,12 +134,17 @@
       padding: var(--toolbar-size);
       .section {
          display: flex;
+         flex-wrap: wrap;
          flex-direction: row;
          gap: 1em;
+         padding: 1.2em;
+         margin-bottom: 2em;
+         border-radius: 8px;
          div {
-            padding: 1.2em;
-            box-sizing: border-box;
             border-radius: 8px;
+            padding: 2em;
+            box-sizing: border-box;
+            background: #498382;
          }
          .vision {
             width: 400px;
@@ -99,6 +153,48 @@
          .mision {
             width: 400px;
             background: #009389;
+         }
+      }
+      .section-2 {
+         border-radius: 15px;
+         margin: auto;
+         img {
+            border-radius: 15px;
+            border: 1px solid rgba(210, 210, 210, 0.588) ;
+         }
+         div {
+            max-width: 250px;
+            background-color: #009389;
+
+         }
+      }
+      .section-3 {
+         width: 100%;
+         display: flex;
+         background: #39c7bd;
+         justify-content: space-around;
+         .title {
+            width: 100%;
+            background-color: #347c7a;
+            padding: 0.8rem;
+            h1 {
+               text-align: center;
+               margin: 0;
+               padding: 0;
+               font-size: 2em;
+            }
+         }
+         .section-3-1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            flex-direction: row;
+            padding: 0;
+            div {
+               margin: 1em;
+               width: 300px;
+               background-color: rgb(19, 99, 145);
+            }
          }
       }
    }

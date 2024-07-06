@@ -22,9 +22,10 @@
       position: absolute;
       height: 100%;
       width: 100%;
-      background-color: rgba(88, 161, 62, 0.177);
-      filter: blur(1.5px);
-      backdrop-filter: blur(4px);
+      background-color: rgba(32, 60, 22, 0.378);
+      filter: blur(10px);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 2px 1px black;
    }
    .header {
       height: 100%;
@@ -40,7 +41,7 @@
    }
    a {
       text-decoration: none;
-      color: var(--font-color-2);
+      color: var(--font-color-1);
    }
    nav {
       font-family: "Poppins", sans-serif;

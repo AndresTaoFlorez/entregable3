@@ -1,22 +1,21 @@
-#root {
-   display: flex;
-   margin: 0;
-   padding: 0;
-   background: green;
-   position: relative;
-   box-sizing: border-box;
-   width: 100vw;
-}
 html {
    margin: 0;
    padding: 0;
    width: 100%;
-   width: 100vw;
+   box-sizing: border-box;
    height: 100vh;
 }
+#root {
+   display: flex;
+   margin: 0;
+   padding: 0;
+   background: rgb(12, 18, 30);
+   position: relative;
+   box-sizing: border-box;
+}
+
 body {
    width: 100%;
-   width: 100vw;
    background: #050608;
    padding: 0;
    margin: 0;
@@ -38,6 +37,6 @@ body {
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    color: wheat;
    background-image: var(--testImage);
-   background-repeat: no-repeat;
-   background-size: cover;
+   background-repeat: repeat-y;
+   background-size: contain;
 }
