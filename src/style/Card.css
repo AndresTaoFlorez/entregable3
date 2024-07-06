@@ -1,0 +1,62 @@
+.card {
+   display: flex;
+   width: fit-content;
+   height: fit-content;
+   flex-direction: column;
+   margin: 0;
+   padding: 1em;
+   background: #d4d1d1;
+   border-radius: 10px;
+   margin-top: .8em;
+   margin-bottom: .8em;
+}
+.card .cardHeader {
+   display: flex;
+   width: 100%;
+   padding: 0em 0 1em 0;
+   margin: 0;
+   background: #d4d1d1;
+   justify-content: center;
+   box-sizing: border-box;
+}
+.card .cardHeader h1 {
+   font-size: 2em;
+   margin: 0;
+}
+.card .cardBody {
+   display: grid;
+   background: #699cf2;
+   max-width: 600px;
+   align-items: center;
+   box-sizing: border-box;
+   grid-template-columns: 1fr;
+   padding: 1em;
+   gap: 1em;
+   border-radius: 10px;
+}
+.card .cardBody-h {
+   grid-template-columns: 60% calc(40% - 1em);
+} 
+.card .cardBody .carParagraph {
+   /* background: #9ec2df; */
+   height: 100%;
+   border-radius: 5%;
+   color: #002316;
+   font-size: 1.15rem;
+
+}
+.card .cardBody .cardImage {
+   overflow: hidden;
+   display: flex;
+   background: #805c5c;
+   justify-content: center;
+   align-items: center;
+   border-radius: 15px;
+   box-shadow: 0 0 10px 0 #29292955;
+}
+.card .cardBody .cardImage img {
+   width: 100%;
+   box-sizing: border-box;
+   height: auto;
+}
+

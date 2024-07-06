@@ -1,0 +1,43 @@
+#root {
+   display: flex;
+   margin: 0;
+   padding: 0;
+   background: green;
+   position: relative;
+   box-sizing: border-box;
+   width: 100vw;
+}
+html {
+   margin: 0;
+   padding: 0;
+   width: 100%;
+   width: 100vw;
+   height: 100vh;
+}
+body {
+   width: 100%;
+   width: 100vw;
+   background: #050608;
+   padding: 0;
+   margin: 0;
+   overflow: clip auto;
+   justify-content: center;
+   box-sizing: border-box;
+   position: relative;
+}
+
+.mainContent {
+   display: flex;
+   position: relative;
+   flex-direction: column;
+   overflow: clip auto;
+   padding: 0;
+   margin: 0;
+   height: 100%;
+   width: 100%;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: wheat;
+   background-image: var(--testImage);
+   background-repeat: no-repeat;
+   background-size: cover;
+}
