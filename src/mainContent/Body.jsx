@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import useWidth from '../customHooks/useWidth';
 import '../style/Body.scss';
+
+
 function Body() {
    const bodyWidthRef = useRef('')
    const imageContentRef = useRef('')
@@ -10,30 +12,31 @@ function Body() {
       bodyWidthBreak: Boolean,
       imageContentWidth: 0
    });
+
+   const imageContent_hook = useWidth(imageContentRef)
    const bodyWidth_hook = useWidth(bodyWidthRef)
-   const imageContentRef_hook = useWidth(imageContentRef)
    useEffect(() => {
       if (bodyWidth_hook) {
-         let newbodyWidthBreak = Boolean
-         if (bodyWidth_hook < 1000) {
-            newbodyWidthBreak = true
-         } else { newbodyWidthBreak = false }
-         setWidths({ bodyWidth: bodyWidth_hook, bodyWidthBreak: newbodyWidthBreak, imageContentWidth: imageContentRef_hook })
+         let newbodyWidthBreak = (a) => {
+            return a > 1000 ? true : false;
+         }
+         setWidths({ bodyWidth: bodyWidth_hook, bodyWidthBreak: newbodyWidthBreak(bodyWidth_hook), imageContentWidth: imageContent_hook })
       }
-   }, [bodyWidth_hook, imageContentRef_hook]);
-
+   }, [bodyWidth_hook, imageContent_hook]);
+   console.log(imageContentRef.current.length)
 
    return (<>
       <div className="body" ref={bodyWidthRef}>
-         <div className={(Widths.bodyWidthBreak) ? 'presentation' : 'presentation presentation-view-2'}>
-            <div className="imageContent" ref={imageContentRef}>
+         <div className={(Widths.bodyWidthBreak) ? 'presentation presentation-view-2' : 'presentation'}>
+            <div className="imageContent" ref={imageContentRef}
+               style={Widths.bodyWidthBreak?{ width: 'var(--imageContentWidth)' }: {width: '100%'}}>
                <h1 style={{ fontSize: ((0.11 * Widths.imageContentWidth) > 160 ? '160px' : (0.11 * Widths.imageContentWidth)) + 'px' }}>Carimañolas Delicias</h1>
-               <div className="image"></div>
+               <div className="image">IMAGEN</div>
             </div>
             <section className='section'>
                <div className="products">
                   <h1>Productos</h1>
-                  <h2>Carimalola de pollo</h2>
+                  <h2>Carimañola de pollo</h2>
                   <h2>Carimañola de carne</h2>
                   <h2>Carimañola de queso</h2>
                   <h2>Carimañolas de mixtas</h2>
@@ -86,6 +89,7 @@ function Body() {
             </section>
          </div>
       </div >
+
    </>)
 }
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
 
    // COLORS
@@ -8,14 +10,15 @@
    --font-color-3-1: #656258;
    --font-color-3-2: #a09b8a;
    --font-color-4: #282726;
+   --font-family: 'Poppins', arial, sans-serif;
 
    // RESOURCES
    --frontPageImage: url('https://blog.amigofoods.com/wp-content/uploads/2023/01/carimanola-colombian-dish.jpg');
    --testImage: url("https://www.ecoturismocolombia.com/wp-content/uploads/2023/06/Mompox-un-pueblo-colonial-en-la-region-de-bolivar-en-colombia-agencia-de-viajes.jpg");
    --testImage: url("https://img.freepik.com/vector-premium/patron-clave-griego-bordado-geometrico-circular-tela-ropa-material-textil_206038-1767.jpg?w=740");
-   --testImage: url("https://img.freepik.com/foto-gratis/hermosa-isla-tropical-maldivas-playa-arena-blanca-mar-arbol-palmeras-alrededor_1232-4491.jpg?t=st=1720290235~exp=1720293835~hmac=cc0cec0cc4a3cf3a4f4a6c857bf3b1750a1b41fdaee561ae69dbcfdb57eaca6f&w=360");
    --testImage: url("https://img.freepik.com/vector-gratis/fondo-plano-afrocolombianidad_23-2149373061.jpg?ga=GA1.1.228555922.1718249569&semt=sph");
+   --testImage: url("https://img.freepik.com/foto-gratis/hermosa-isla-tropical-maldivas-playa-arena-blanca-mar-arbol-palmeras-alrededor_1232-4491.jpg?t=st=1720290235~exp=1720293835~hmac=cc0cec0cc4a3cf3a4f4a6c857bf3b1750a1b41fdaee561ae69dbcfdb57eaca6f&w=360");
 
    // SIZE
-   --imageContentWidth: 60vw;
+   --imageContentWidth: 70vw;
 }

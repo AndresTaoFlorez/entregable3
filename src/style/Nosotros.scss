@@ -1,0 +1,9 @@
+@import './variables/general';
+
+
+.nosotros {
+   padding-top: var(--toolbar-size);
+   width: 100%;
+   min-height: calc(100vh - var(--toolbar-size));
+   background: #78cc22;
+}

@@ -29,8 +29,6 @@
       align-items: center;
       overflow: hidden;
       justify-content: center;
-      // background: #6df4f470;
-      // gap: calc(var(--toolbar-size) / 2);
       section {
          width: 100%;
          box-sizing: border-box;
@@ -81,7 +79,8 @@
             border-radius: 15px;
             height: 100%;
             width: 100%;
-            background-image: var(--frontPageImage);
+            border-radius: 0;
+            background-image: image-set(var(--frontPageImage) type("image/jpg"));
             background-size: cover;
             box-shadow: 0 0 10px 2px #1c1c1c89;
          }
@@ -111,8 +110,8 @@
          display: flex;
          position: relative;
          height: 100vh;
-         max-width: var(--imageContentWidth);
-         width: 100%;
+         width: var(--imageContentWidth);
+         // width: 100%;
          .image {
             margin-top: calc(var(--toolbar-size)*-1);
             display: flex;

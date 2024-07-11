@@ -1,41 +1,34 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react';
 
-// this custom hook provides the width of the element in dom
-// const useWidth = (ref) => {
-//    const [width, setWidth] = useState(0)
+function useWidth(ref) {
+  const [width, setWidth] = useState(0);
+  const resizeObserver = useRef(null);
 
-//    useEffect(() => {
-//       const handleResize = () => {
-//          setWidth(ref.current.clientWidth)
-//       }
-//       window.addEventListener("resize", handleResize)
-//       return () => {
-//          window.removeEventListener("resize", handleResize)
-//       }
-//    }, [ref])
-//    if(width == 0){
-//       setWidth(ref.current.clientWidth)
-//       return width
-//    }
-//    return width
-// }
-
-const useWidth = (ref) => {
-   const [width, setWidth] = useState(0)
-
-   useEffect(() => {
-      const handleResize = () => {
-         setWidth(ref.current.clientWidth)
+  useEffect(() => {
+    resizeObserver.current = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        if (entry.target === ref.current) {
+          setWidth(entry.contentRect.width);
+        }
       }
-      handleResize(); // Llama a handleResize cuando se inicia el componente
-      window.addEventListener("resize", handleResize)
-      return () => {
-         window.removeEventListener("resize", handleResize)
-      }
-   }, [ref])
+    });
 
-   return width
+    if (ref.current) {
+      resizeObserver.current.observe(ref.current);
+    }
+
+    const newRef = ref.current
+    return () => {
+      if (resizeObserver.current && newRef) {
+        resizeObserver.current.unobserve(newRef);
+      }
+    };
+  }, [ref]);
+
+  return width;
 }
 
+export default useWidth;
 
-export default useWidth
+
+
